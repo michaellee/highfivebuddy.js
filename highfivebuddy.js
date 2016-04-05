@@ -1,21 +1,17 @@
 (function(window){
   'use strict';
   function define_highFiveBuddy(){
-    let quotes = {
-      'A': [
-        'Come on!',
-        'Ow!'
-      ],
-      'B': [
-        'Be awesome',
+    var quotes = {
+      'Unknown': [
+        'You are awesome',
         'Stay cool!'
       ]
     }
     
     var HighFiveBuddy = {};
     var randomQuote = function(withAuthor){
-      var author = randomAuthor(quotes)
-      var quote = quotes[author][randomAuthorQuote(0, author.length-1)];
+      var author = randomAuthor(quotes);
+      var quote = quotes[author][randomAuthorQuote(0, quotes[author].length-1)];
       if(withAuthor){
         return quote + " -" + author;
       }else{
@@ -49,5 +45,3 @@
     console.log('HighFiveBuddy is already defined.');
   }
 })(window);
-
-HighFiveBuddy.getQuote(true);
